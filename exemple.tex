@@ -1,0 +1,85 @@
+\documentclass{umonsreport}
+\usepackage[french]{babel} %Langue
+\usepackage{lipsum}
+
+\begin{document}
+
+%----------- Informations ---------
+
+\title{Umons Report - Template}
+\fulltitle{Titre du rapport} %Gros titre en gras
+\smalltitle{R\'esum\'e du titre} %Apparait en bas de page
+
+\prof{Pr\'enom \textsc{Nom}} %Professeur
+
+\auth{Pr\'enom \textsc{Nom}} %Auteur(s) /!\ MODIFIER LE PLURIEL SUR LA PAGE DE GARDE SI PLUSIEURS AUTEURS
+
+
+%------------------- Init -------------------
+        
+\margin %En-tetes et bas de pages
+\maketitlepg %IMPORTEZ LA VOTRE SI VOUS PREFEREZ
+\tableofcontents
+\newpage
+
+%------------ Body ----------------
+
+
+\section{Section uno} 
+
+\lipsum[3-4]
+
+\subsection{Subsection uno}
+
+\lipsum[3-4]
+
+\section{Section dos}
+
+\lipsum[3-5]
+
+\section{Amazing logos !}
+
+%---------- Logo showcase --------
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/FS.png}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/FS2.png}
+    \end{subfigure}
+    ~ \bigskip
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/FS-colored.png}
+    \end{subfigure}
+    ~ 
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[height=7em]{logos/FS-colored-small.png}
+    \end{subfigure}
+    \caption{Diff\'erents logos de la fac des sciences}
+    \label{fig:fs-logos}
+\end{figure}
+
+Les logos de la figure \ref{fig:fs-logos} sont juste waw !
+$\num{2e+9}$
+
+
+\newcommand{\auths}{Full name\\ Full name} 
+\newcommand{\authsSC}{Full \textsc{name}\\ Full \textsc{name}} 
+
+\IfSubStr{\auths}{\\}
+    {Multiple authors}
+    {Single author}
+    
+\IfSubStr{\authsSC}{\\}
+    {Multiple authors}
+    {Single author}
+
+
+\end{document}
