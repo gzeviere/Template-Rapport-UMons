@@ -1,0 +1,110 @@
+\documentclass{umonsreport}
+\usepackage[french]{babel} %Langue
+\usepackage{lipsum}
+
+\begin{document}
+
+%----------- Informations ---------
+
+\title{Umons Report - Template}
+\fulltitle{Titre du rapport} %Gros titre en gras
+\smalltitle{R\'esum\'e du titre} %Apparait en bas de page
+
+\class{Le cours}
+\prof{Pr\'enom \textsc{Nom}} %Professeur
+\assistant{Pr\'enom \textsc{Nom}} %Assistant(s) /!\ MODIFIER LE PLURIEL SUR LA PAGE DE GARDE SI PLUSIEURS 
+\auth{Pr\'enom \textsc{Nom} \normalsize\texttt{(200200)}} %Auteur(s) /!\ MODIFIER LE PLURIEL SUR LA PAGE DE GARDE SI PLUSIEURS 
+
+
+%------------------- Init -------------------
+        
+\input{titlepage} %IMPORTEZ LA VOTRE SI VOUS PREFEREZ
+\margin %En-tetes et bas de pages
+\tableofcontents
+\newpage
+
+%------------ Body ----------------
+
+
+\section{Section uno} 
+
+\lipsum[3-4]
+
+\subsection{Sous-section uno}
+
+\lipsum[3-4]
+
+\section{Section dos}
+
+\lipsum[3-5]
+
+\section{Amazing logos !}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[height=7em]{logos/FS-small.png}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/FS-grey-red-box.png}
+    \end{subfigure}
+    ~ \bigskip
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/FS.png}
+    \end{subfigure}
+    ~ 
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/FS-grey.png}
+    \end{subfigure}
+    ~ 
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/FS-info.png}
+    \end{subfigure}
+    ~ 
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/FS-info-grey-EN.png}
+    \end{subfigure}
+    \caption{Alternatives au logo au bas à gauche de la page de garde}
+    \label{fs-logos}
+\end{figure}
+
+Beaucoup de ces logos ont une version anglophone, essayez le même nom avec un \texttt{"-EN.png"} à la fin. Voici en exemple en figure \ref{en-logos}.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/Umons.png}
+    \end{subfigure}
+    ~\hspace{3em}
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/Umons-EN.png}
+    \end{subfigure}
+    \caption{Exemple de version anglophone}
+    \label{en-logos}
+\end{figure}
+
+Pour le logo en en-tête, il existe une version monochrome.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/small-Umons.png}
+    \end{subfigure}
+    ~\hspace{3em}
+    \begin{subfigure}[t]{.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{logos/small-Umons-black.png}
+    \end{subfigure}
+    \caption{Alternatives au logo en en-tête}
+    \label{heading-logos}
+\end{figure}
+
+\end{document}
