@@ -13,7 +13,7 @@
 \class{Le cours}
 \prof{Pr\'enom \textsc{Nom}} %Professeur
 \assistant{Pr\'enom \textsc{Nom}} %Assistant(s) /!\ MODIFIER LE PLURIEL SUR LA PAGE DE GARDE SI PLUSIEURS 
-\auth{Pr\'enom \textsc{Nom} \normalsize\texttt{(200200)}} %Auteur(s) /!\ MODIFIER LE PLURIEL SUR LA PAGE DE GARDE SI PLUSIEURS 
+\auth{Pr\'enom \textsc{Nom} {\normalsize\texttt{(200200)}} } %Auteur(s) /!\ MODIFIER LE PLURIEL SUR LA PAGE DE GARDE SI PLUSIEURS 
 
 
 %------------------- Init -------------------
@@ -106,5 +106,48 @@ Pour le logo en en-tête, il existe une version monochrome.
     \caption{Alternatives au logo en en-tête}
     \label{heading-logos}
 \end{figure}
+
+\begin{reminder}[p-value]
+    The \textbf{\textit{p-value}} of a test is the smallest level for $\alpha$ that allows us to reject the \textit{hypothesis}.
+    \begin{itemize} 
+        \item If the choosen $\alpha$ is bigger or equal to the \textit{p-value}, we can \textbf{reject} the hypothesis. 
+        \item Otherwise, we can \textbf{accept} it (without conviction).
+    \end{itemize}
+\end{reminder}
+
+\begin{definition}[Théorème fondamental de l'analyse]
+    Soit $f:[a,b]\to \mathbb R$ une application continue. Alors, l'application
+    \[
+    \mathcal{F}:[a,b]\to \mathbb R:x\mapsto\int_a^xf(\epsilon)d\epsilon
+    \]
+    est une \textbf{primitive} de $f$ sur $[a,b]$, c'est \`a dire que, pour tout $x\in[a,b]$,
+    \[
+    \partial\mathcal{F}(x)=f(x)
+    \]
+\end{definition}
+
+Exemple d'algo avec \verb|algorithm2e|\\
+
+
+\SetKwComment{Comment}{/* }{ */}
+\begin{algorithm}[H]
+\caption{An algorithm with caption}\label{alg:two}
+\KwData{$n \geq 0$}
+\KwResult{$y = x^n$}
+$y \gets 1$\;
+$X \gets x$\;
+$N \gets n$\;
+\While{$N \neq 0$}{
+  \eIf{$N$ is even}{
+    $X \gets X \times X$\;
+    $N \gets \frac{N}{2} $ \Comment*[r]{This is a comment}
+  }{\If{$N$ is odd}{
+      $y \gets y \times X$\;
+      $N \gets N - 1$\;
+    }
+  }
+}
+\end{algorithm}
+Pour du pseudo code en français, ajouter les options \verb|french| et \verb|frenchkw|. Les mots-clés en français sont dispo à la page 42 de la \href{https://tug.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf}{\textit{doc du package}}
 
 \end{document}

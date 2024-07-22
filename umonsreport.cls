@@ -4,9 +4,12 @@
 
 \LoadClass[a4paper,12pt]{article}
 
+\RequirePackage{algpseudocode}
+\RequirePackage[ruled,linesnumbered]{algorithm2e}
+\RequirePackage[svgnames]{xcolor}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-\RequirePackage{mathtools, amssymb} %Équations et symboles mathématiques
+\RequirePackage{mathtools, amssymb, amsthm, thmtools} %Équations definitions rappels
 \RequirePackage{siunitx} %(Ex.: \num{2e+9})
 \RequirePackage{graphicx, float}
 \RequirePackage[justification=centering]{caption} 
@@ -17,6 +20,7 @@
 \RequirePackage[hidelinks]{hyperref} %Références cliquable (table des matières, figures, équations) 
 \RequirePackage[left=2.5cm,right=2.5cm,top=2cm,bottom=3.5cm]{geometry} %Configuration de la page
 \RequirePackage{tikz}
+\RequirePackage{framed}
 
 %-------------------- Commands ----------------------
 
@@ -42,3 +46,41 @@
     \rfoot{\thepage}
     \lfoot{\smalltitle}
 }
+
+% ----- definitions -----
+\colorlet{def}{purple} %umons red
+\newenvironment{defbar}{%
+  \def\FrameCommand{{\color{def}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+ \declaretheoremstyle[name=D\'efinition,%
+    headfont=\sffamily\bfseries,%
+    notefont=\sffamily\bfseries\itshape,%
+    notebraces={}{},%
+    headpunct=,%
+    bodyfont=\sffamily,%
+    headformat=\color{def}\NAME~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+    preheadhook=\begin{defbar},%
+    postfoothook=\end{defbar},%
+ ]{customDefinition}
+ \declaretheorem[style=customDefinition, numberwithin=section]{definition}
+
+% ----- reminders -----
+\colorlet{rem}{Gray}
+\newenvironment{rembar}{%
+  \def\FrameCommand{{\color{rem}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+ \declaretheoremstyle[name=Rappel,%
+    headfont=\sffamily\bfseries,%
+    notefont=\sffamily\bfseries\itshape,%
+    notebraces={}{},%
+    headpunct=,%
+    bodyfont=\sffamily,%
+    headformat=\color{rem}\NAME~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+    preheadhook=\begin{rembar},%
+    postfoothook=\end{rembar},%
+ ]{customReminder}
+ \declaretheorem[style=customReminder, numberwithin=section]{reminder}
