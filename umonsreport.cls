@@ -84,3 +84,22 @@
     postfoothook=\end{rembar},%
  ]{customReminder}
  \declaretheorem[style=customReminder, numberwithin=section]{reminder}
+
+% ----- proofs -----
+\colorlet{proo}{RoyalBlue}
+\newenvironment{proofbar}{%
+  \def\FrameCommand{{\color{proo}\vrule width 3pt} \hspace{10pt}}%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+ \declaretheoremstyle[name=Preuve,%
+    headfont=\sffamily\bfseries,%
+    notefont=\sffamily\bfseries\itshape,%
+    notebraces={}{},%
+    headpunct=,%
+    bodyfont=\sffamily,%
+    headformat=\color{proo}\NAME~\NUMBER\hfill\NOTE\smallskip\linebreak,%
+    preheadhook=\begin{proofbar},%
+    postfoothook=\end{proofbar},%
+ ]{customProof}
+ \declaretheorem[style=customProof, numberwithin=section]{cproof}
